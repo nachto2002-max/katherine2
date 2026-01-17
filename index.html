@@ -1,162 +1,177 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Para vos 🦋</title>
+
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, sans-serif;
-    }body {
-  min-height: 100vh;
-  background: linear-gradient(180deg, #ffb6c1, #ff69b4, #ff9acb);
-  color: white;
-  overflow: hidden;
-}
+    }
 
-.container {
-  position: relative;
-  z-index: 2;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-}
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #ffb6c1, #ff69b4, #ff9acb);
+      color: white;
+      overflow: hidden;
+    }
 
-.card {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  border-radius: 25px;
-  padding: 35px 30px;
-  max-width: 460px;
-  box-shadow: 0 0 40px rgba(255, 105, 180, 0.4);
-  animation: fadeIn 2s ease;
-}
+    .container {
+      position: relative;
+      z-index: 2;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
 
-h1 {
-  font-size: 2.4em;
-  margin-bottom: 15px;
-  text-shadow: 0 0 10px rgba(255,255,255,0.6);
-}
+    .card {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      padding: 35px 30px;
+      max-width: 460px;
+      box-shadow: 0 0 40px rgba(255, 105, 180, 0.4);
+      animation: fadeIn 2s ease;
+    }
 
-p {
-  font-size: 1.15em;
-  line-height: 1.7;
-  opacity: 0.95;
-}
+    h1 {
+      font-size: 2.4em;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.6);
+    }
 
-.hearts {
-  margin-top: 15px;
-  font-size: 1.4em;
-  animation: pulse 2s infinite;
-}
+    p {
+      font-size: 1.15em;
+      line-height: 1.7;
+      opacity: 0.95;
+    }
 
-audio {
-  margin-top: 25px;
-  width: 100%;
-}
+    .hearts {
+      margin-top: 15px;
+      font-size: 1.4em;
+      animation: pulse 2s infinite;
+    }
 
-/* Mariposas */
-.butterfly {
-  position: absolute;
-  width: 45px;
-  height: 45px;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Butterfly_icon.svg/512px-Butterfly_icon.svg.png');
-  background-size: cover;
-  opacity: 0.85;
-  animation: fly linear infinite;
-  filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
-}
+    audio {
+      margin-top: 25px;
+      width: 100%;
+    }
 
-/* Corazones */
-.heart {
-  position: absolute;
-  color: rgba(255,255,255,0.8);
-  font-size: 18px;
-  animation: floatUp linear infinite;
-}
+    /* 🦋 Mariposas */
+    .butterfly {
+      position: absolute;
+      width: 45px;
+      height: 45px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Butterfly_icon.svg/512px-Butterfly_icon.svg.png');
+      background-size: cover;
+      opacity: 0.9;
+      animation: fly linear infinite;
+      filter: drop-shadow(0 0 8px rgba(255,255,255,0.7));
+      z-index: 1;
+      pointer-events: none;
+    }
 
-@keyframes fly {
-  from {
-    transform: translateY(110vh) translateX(0) rotate(0deg);
-  }
-  to {
-    transform: translateY(-120vh) translateX(200px) rotate(360deg);
-  }
-}
+    /* ❤ Corazones */
+    .heart {
+      position: absolute;
+      color: rgba(255,255,255,0.85);
+      font-size: 20px;
+      animation: floatUp linear infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
 
-@keyframes floatUp {
-  from {
-    transform: translateY(110vh);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(-120vh);
-    opacity: 1;
-  }
-}
+    @keyframes fly {
+      from {
+        transform: translateY(120vh) translateX(0) rotate(0deg);
+      }
+      to {
+        transform: translateY(-140vh) translateX(200px) rotate(360deg);
+      }
+    }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+    @keyframes floatUp {
+      from {
+        transform: translateY(120vh);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(-140vh);
+        opacity: 1;
+      }
+    }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
   </style>
 </head>
-<body>  <script>
-    // Mariposas (arreglado)
+
+<body>
+
+  <!-- 🦋 Mariposas -->
+  <script>
     for (let i = 0; i < 30; i++) {
       const b = document.createElement('div');
       b.classList.add('butterfly');
       b.style.left = Math.random() * 100 + 'vw';
-      b.style.bottom = '-60px';
-      b.style.animationDuration = 15 + Math.random() * 20 + 's';
+      b.style.top = Math.random() * 100 + 'vh';
+      b.style.animationDuration = 12 + Math.random() * 18 + 's';
       b.style.animationDelay = Math.random() * 5 + 's';
-      b.style.transform = `scale(${0.6 + Math.random()})`;
+      b.style.transform = `scale(${0.5 + Math.random()})`;
       document.body.appendChild(b);
     }
 
-    // Corazones
+    // ❤ Corazones
     for (let i = 0; i < 25; i++) {
       const h = document.createElement('div');
       h.className = 'heart';
       h.innerText = '❤';
       h.style.left = Math.random() * 100 + 'vw';
-      h.style.bottom = '-20px';
       h.style.animationDuration = 8 + Math.random() * 10 + 's';
       h.style.animationDelay = Math.random() * 5 + 's';
       document.body.appendChild(h);
     }
-  </script>  <div class="container">
+  </script>
+
+  <div class="container">
     <div class="card">
       <h1>Para vos 🦋</h1>
       <p>
         Hay personas que llegan despacio y, sin darse cuenta, cambian todo.
         Vos sos una de ellas. Pensarte me llena de calma, de ilusión,
         y de esas mariposas que no saben quedarse quietas.
-      </p><div class="hearts">❤ ❤ ❤</div>
+      </p>
 
-  <audio controls autoplay loop>
-    <source src="cancion.mp3" type="audio/mpeg" />
-    Tu navegador no soporta audio.
-  </audio>
-</div>
+      <div class="hearts">❤ ❤ ❤</div>
 
-  </div></body>
+      <!-- 🎶 Música -->
+      <audio controls autoplay loop>
+        <source src="cancion.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
+    </div>
+  </div>
+
+</body>
 </html>
